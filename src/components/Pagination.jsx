@@ -7,10 +7,10 @@ const Pagination = () => {
     return (
         <>
             <div>
-                {allData ? (<div className="container text-2xl mt-5 text-center font-abc3D md:w-3/4 md:px-2 py-1 pl-1 pr-6 mx-3" >
+                {allData ? (<div className="container text-2xl mt-5  text-center font-abc3D font-extralight md:w-3/4 md:px-2 py-1 pl-1 pr-6 mx-3" >
                     <div className="grid grid-rows-1 grid-flow-col text-black" >
-                        <div className="grid grid-rows-1 grid-flow-col gap-0">
-                            <button className="text-yellow-500 hover:text-yellow-700 rounded-xl"
+                        <div className="grid grid-rows-1 grid-flow-col gap-0 ">
+                            <button className="text-yellow-500  uppercase hover:text-yellow-700 rounded-xl"
                                 onClick={() => setPage(1)}> inicio</button>
                             {allData.previous === null ?
                                 allData.next === null ?
@@ -27,7 +27,7 @@ const Pagination = () => {
                                 </button>
                                 : ''}
                             {allData.next !== null ?
-                                <button className="text-yellow-500 hover:text-yellow-700"
+                                <button className="text-yellow-500  uppercase hover:text-yellow-700"
                                     onClick={() => setPage(page + 1)}>
                                     siguiente
                                 </button>

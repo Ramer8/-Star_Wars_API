@@ -23,16 +23,16 @@ const Show = () => {
     return (
         <>
             <Input />
-            <div className="flex grid-rows-1 grid-flow-col ">
-                <div className="mx-10 text-2xl font-abc3D font-bold">Filtrar por</div>
-                <select className="grid grid-rows-1 grid-flow-col font-bold bg-zinc-900 font-abc3D rounded-lg text-xl border-amber-500"
+            <div className="flex grid-rows-1 grid-flow-col mb-5 ">
+                <div className="mx-3 text-2xl font-abc3D font-bold ">Filtrar por</div>
+                <select className="flex hover:bg-amber-500 hover:text-black font-bold bg-zinc-900 font-abc3D rounded-lg text-xl "
                     value={filteredGender}
                     onChange={e => setFilteredGender(e.target.value)} >
                     <option value='1'>Todos los Generos</option>
                     <option value='male'>Masculino</option>
                     <option value='female'>Femenino</option>
                     <option value='n/a'>n/a</option>
-                    <option value='hermaphrodite'>Hemafrodita</option>
+                    <option value='hermaphrodite'>Hermafrodita</option>
                 </select>
             </div>
             {spinner ?
@@ -42,7 +42,7 @@ const Show = () => {
                 :
                 filtered ?
                     (<div>
-                        <div className="flex grid-rows-1 grid-flow-col gap-2 px-5 ">
+                        <div className="flex grid-rows-1 grid-flow-col gap-2 px-2 ">
                             <table className="mx-2 table text-left font-abc3D text-2xl w-3/4 text-blue-400">
                                 <thead>
                                     <tr>
