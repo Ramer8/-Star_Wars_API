@@ -8,14 +8,13 @@ const ApiProvider = ({ children }) => {
     const [spinner, setSpinner] = useState(false)
     const [page, setPage] = useState(1)
     const [allData, setAllData] = useState()
+    const [filtered, setFiltered] = useState('')
 
     const searchData = async () => {
         setSpinner(true)
         try {
             const { data } = await axios(`https://swapi.dev/api/people/?search=${searchQuery}&page=${page}`)
-
             const results = data
-
             const newData = data
 
             for (let index = 0; index < results.results.length; index++) {
@@ -26,10 +25,8 @@ const ApiProvider = ({ children }) => {
                     newData.results[index].species = ""
                 }
             }
-
             setAllData(newData)
             setSpinner(false)
-
 
         } catch (error) {
             throw new Error(error)
@@ -38,7 +35,6 @@ const ApiProvider = ({ children }) => {
 
     useEffect(() => {
         searchData()
-
     }, [searchQuery, page])
 
     return (
@@ -51,7 +47,9 @@ const ApiProvider = ({ children }) => {
                 allData,
                 spinner,
                 searchQuery,
-                searchData
+                searchData,
+                filtered,
+                setFiltered,
             }}
         >
             {children}
